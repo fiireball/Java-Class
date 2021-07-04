@@ -1,8 +1,8 @@
 package a6.OOP;
 
 public class Wall {
-	public double width;
 	public double height;
+	public double width;
 	
 	// Constructors
 	public Wall() {
@@ -15,22 +15,22 @@ public class Wall {
 		this.height = height;
 	}
 
-	// Getters & Setters
-	public double getWidth() {
-		return width;
-	}
-	public void setWidth(double width) {
-		this.width = width;
+	public double getArea() {
+		return this.height*this.width;
 	}
 	public double getHeight() {
 		return height;
+	}
+	// Getters & Setters
+	public double getWidth() {
+		return width;
 	}
 	public void setHeight(double height) {
 		this.height = height;
 	}
 	
-	public double getArea() {
-		return this.height*this.width;
+	public void setWidth(double width) {
+		this.width = width;
 	}
 
 }

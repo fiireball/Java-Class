@@ -9,12 +9,12 @@ public class Armor {
 		return armorValue;
 	}
 
-	public void setArmorValue(int armorValue) {
-		this.armorValue = armorValue;
-	}
-
 	public String getName() {
 		return name;
+	}
+
+	public void setArmorValue(int armorValue) {
+		this.armorValue = armorValue;
 	}
 
 	public void setName(String name) {

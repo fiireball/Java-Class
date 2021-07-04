@@ -6,6 +6,26 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 public class DemoLinked {
+	private static boolean addInOrder(LinkedList<String> linkedList, String newEntry) {
+		ListIterator<String> listIterator = linkedList.listIterator();
+		
+		while (listIterator.hasNext()) {
+			int comparison = listIterator.next().compareTo(newEntry);
+			if (comparison == 0) {
+				System.out.println("[debug] " + newEntry + " is already in the list.");
+				return false;
+			}
+			if (comparison > 0) {
+				listIterator.previous();
+				listIterator.add(newEntry);
+				return true;
+			}
+		}
+		
+		listIterator.add(newEntry);
+		return true;
+	}
+
 	public static void main(String[] args) {
 		LinkedList<String> placesToVisit = new LinkedList<>();
 		placesToVisit.add("Grand Canaria");
@@ -37,7 +57,7 @@ public class DemoLinked {
 		visit(placesToVisit);
 		
 	}
-
+	
 	private static void printList(LinkedList<String> linkedList) {
 		Iterator<String> i = linkedList.iterator();
 		while (i.hasNext()) {
@@ -46,26 +66,14 @@ public class DemoLinked {
 		System.out.println("===========================");
 	}
 	
-	private static boolean addInOrder(LinkedList<String> linkedList, String newEntry) {
-		ListIterator<String> listIterator = linkedList.listIterator();
+	private static void printMenu() {
+		System.out.println("0 - quit\r"
+				+ "1 - visit next\r"
+				+ "2 - visit previous\r"
+				+ "3 - print menu\r");	
 		
-		while (listIterator.hasNext()) {
-			int comparison = listIterator.next().compareTo(newEntry);
-			if (comparison == 0) {
-				System.out.println("[debug] " + newEntry + " is already in the list.");
-				return false;
-			}
-			if (comparison > 0) {
-				listIterator.previous();
-				listIterator.add(newEntry);
-				return true;
-			}
-		}
-		
-		listIterator.add(newEntry);
-		return true;
 	}
-	
+
 	private static void visit (LinkedList<String> cities) {
 		Scanner scanner = new Scanner(System.in);
 		boolean quit = false;
@@ -122,14 +130,6 @@ public class DemoLinked {
 				break;
 			}
 		}
-		
-	}
-
-	private static void printMenu() {
-		System.out.println("0 - quit\r"
-				+ "1 - visit next\r"
-				+ "2 - visit previous\r"
-				+ "3 - print menu\r");	
 		
 	}
 	

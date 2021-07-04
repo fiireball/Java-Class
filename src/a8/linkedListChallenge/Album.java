@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Album {
 
-	private ArrayList<Song> songs;
 	private String name;
+	private ArrayList<Song> songs;
 
 	public Album(String name) {
 		super();
@@ -13,20 +13,20 @@ public class Album {
 		this.songs = new ArrayList<>();
 	}
 
-	public ArrayList<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(ArrayList<Song> songs) {
-		this.songs = songs;
+	public void add(Song song) {
+		this.songs.add(song);
 	}
 
 	public String getName() {
 		return name;
 	}
+
+	public ArrayList<Song> getSongs() {
+		return songs;
+	}
 	
-	public void add(Song song) {
-		this.songs.add(song);
+	public void setSongs(ArrayList<Song> songs) {
+		this.songs = songs;
 	}
 
 }

@@ -5,8 +5,8 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Playlist {
-	private LinkedList<Song> playList;
 	private String name;
+	private LinkedList<Song> playList;
 	private Scanner scanner;
 
 	public Playlist(String name) {
@@ -17,20 +17,27 @@ public class Playlist {
 
 	// GETTERS
 
-	public LinkedList<Song> getPlayList() {
-		return playList;
-	}
-
-	public String getName() {
-		return name;
-	}
-
 	public void add(Song song) {
 		if (this.playList.contains(song)) {
 			System.out.println("Song already exists in this playlist.");
 		} else {
 			this.playList.add(song);
 		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public LinkedList<Song> getPlayList() {
+		return playList;
+	}
+
+	private void printMenu() {
+		System.out.println("==============================");
+		System.out.println("quit - to quit\r" + "replay - to replay current song\r" + "next - to play next song\r"
+				+ "previous - to play previous song");
+		System.out.println("==============================");
 	}
 
 	public void start() {
@@ -92,13 +99,6 @@ public class Playlist {
 			}
 		}
 		System.out.println("Stopping playback. Quitting.");
-	}
-
-	private void printMenu() {
-		System.out.println("==============================");
-		System.out.println("quit - to quit\r" + "replay - to replay current song\r" + "next - to play next song\r"
-				+ "previous - to play previous song");
-		System.out.println("==============================");
 	}
 
 }

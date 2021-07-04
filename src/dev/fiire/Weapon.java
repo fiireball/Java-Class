@@ -7,32 +7,6 @@ public class Weapon {
 	private int bonusDamage;
 	private String name;
 
-	public int getBonusDamage() {
-		return bonusDamage;
-	}
-
-	public void setBonusDamage(int bonusDamage) {
-		this.bonusDamage = bonusDamage;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public String toString() {
-		return "Weapon [bonusDamage=" + bonusDamage + ", name=" + name + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(bonusDamage, name);
-	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -43,6 +17,32 @@ public class Weapon {
 			return false;
 		Weapon other = (Weapon) obj;
 		return bonusDamage == other.bonusDamage && Objects.equals(name, other.name);
+	}
+
+	public int getBonusDamage() {
+		return bonusDamage;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(bonusDamage, name);
+	}
+
+	public void setBonusDamage(int bonusDamage) {
+		this.bonusDamage = bonusDamage;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Weapon [bonusDamage=" + bonusDamage + ", name=" + name + "]";
 	}
 
 }
