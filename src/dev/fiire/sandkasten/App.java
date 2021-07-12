@@ -1,4 +1,4 @@
-package dev.fiire;
+package dev.fiire.sandkasten;
 
 import java.util.Scanner;
 
