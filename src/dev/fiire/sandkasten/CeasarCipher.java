@@ -2,9 +2,9 @@ package dev.fiire.sandkasten;
 
 import java.util.Scanner;
 
-public class App {
+public class CeasarCipher {
 
-	public static void main(String[] args) {
+	public void start() {
 		// Ceasar cipher
 		int shift;
 		String message;
@@ -34,8 +34,9 @@ public class App {
 
 		encodedMessage = new String(shiftedChars);
 		System.out.println(encodedMessage);
-		
+
 	}
+
 
 	private static char getShifted(char ch, int shift) {
 		char shiftedChar = ch;
@@ -99,5 +100,6 @@ public class App {
 
 		return false;
 	}
+
 
 }
